@@ -4,13 +4,13 @@ target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
+
+__pycache__/
+node_modules/
 
 ### Eclipse ###
 .apt_generated

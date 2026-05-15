@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play m3u8 Video</title>
+</head>
+<body>
+  <h1>HLS Video Playback</h1>
+  <video preload="metadata" id="video" src="blob:https://jx.xmflv.com/3b8484cb-aaee-4b1f-9d04-5d89a279a5f0" controls autoplay width="640" height="360"></video>
+
+  <!-- 引入 hls.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<!--  <script>
+    // 获取视频元素
+    const video = document.getElementById('video');
+    const videoUrl = 'https://valipl10.cp31.ott.cibntv.net/67749F74EC64171D672C937B4/0500CC00006593E183007355FC7DB0638D1A81-957C-4129-A49E-6C70E7C8CB97-12-5902804433.m3u8?ccode=0502&duration=6714&expire=18000&psid=79276747e1969b96de078889904986a241346&ups_client_netip=7018dc5e&ups_ts=1734260923&ups_userid=1104298908&apscid=&mnid=&rid=2000000086637ABB16C40B9AEBB1A3E5D3B44F6502000000&operate_type=1&umt=1&type=cmfv4hd2&utid=jPEyHekxg2oCAXAC5%2FySh3XH&vid=XNzYzODM1Nzk2&s=f282dd90f11311e3b8b7&iv=1&t=b0db2cd44f56ad3&cug=2&bc=2&si=583&eo=0&ckt=5&m_onoff=0&vkey=Bf7f59e9a04d69745ceccd593d6dfc1cc&fms=5119c1827cd58135&tr=6699&le=db1f815dfeb32c59b245e9f943a0d169&app_key=24679788&app_ver=9.5.24'
+	
+		// 检查 HLS 是否支持
+    if (Hls.isSupported()) {
+      const hls = new Hls(); // 创建 Hls 实例
+      hls.loadSource(videoUrl); // 加载 m3u8 文件
+      hls.attachMedia(video); // 将 m3u8 流绑定到 video 元素
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        console.log('Video loaded and ready to play!');
+        video.play();
+      });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      // 对于原生支持 HLS 的浏览器（如 Safari）
+      video.src = videoUrl;
+      video.addEventListener('loadedmetadata', () => {
+        video.play();
+      });
+    } else {
+      console.error('HLS not supported in this browser.');
+    }
+  </script> -->
+</body>
+</html>

@@ -13,10 +13,10 @@ ctx = execjs.compile(js_code)
 params = {
     'gk_version': 'gz-gaokao',
     't': 'general',
-    'q': '接单平台',
+    'q': '巴印冲突',
     'correction': '1',
     'offset': '0',
-    'limit': '10',
+    'limit': '20',
     'filter_fields': '',
     'lc_idx': '0',
     'show_all_topics': '0',
@@ -65,5 +65,12 @@ headers = {
 
 
 response = requests.get('https://www.zhihu.com/api/v4/search_v3', params=params, cookies=cookies, headers=headers)
-data = response.json().get("data");
-print(data);
+data = response.json().get("data")
+for item in data:
+    if (item['type'] == 'search_result'):
+        print(f"title: {item['highlight']['title']}")
+        print("-------------")
+        print(f"description: {item['highlight']['description']}")
+        print("-------------")
+        print(f"content: {item['object']['content']}")
+        print("===============")
